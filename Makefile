@@ -12,8 +12,7 @@ all: install build
 install:
 	go mod tidy
 
-build: build-frontend
-	go build \
+build: 	go build \
     	-ldflags "-s -w -X github.com/ArtalkJS/ArtalkGo/internal/config.Version=${VERSION} \
         -X github.com/ArtalkJS/ArtalkGo/internal/config.CommitHash=${COMMIT_HASH}" \
         -o bin/artalk-go \
