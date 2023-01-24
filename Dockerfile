@@ -1,5 +1,5 @@
 ### build ArtalkGo
-FROM golang:1.19.4-alpine3.17 as builder
+FROM golang:1.18.4-alpine3.17 as builder
 
 WORKDIR /source
 
@@ -13,7 +13,7 @@ COPY . ./ArtalkGo
 
 # build
 RUN set -ex \
-    && cd ./ArtalkGo \
+    && cd /ArtalkGo \
     && git fetch --tags -f \
     && export VERSION=$(git describe --tags --abbrev=0) \
     && export COMMIT_SHA=$(git rev-parse --short HEAD) \
